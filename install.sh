@@ -30,18 +30,20 @@ install_required_termux_packages() {
 install_required_kali_packages() {
     echo -e "\e[34mChecking and installing required packages for Kali Linux...\e[0m"
     sudo apt install curl jq figlet toilet lolcat -y
+    clear
+    sleep 5
 }
 
 # Display a colorful and fancy banner
 display_banner() {
     colors=(31 32 33 34 35 36)
     color_index=$(( RANDOM % 6 ))
-    echo "Fancy Banner Display" | figlet | lolcat
+    echo "SsL   Hunter" | figlet | lolcat
 }
 
 # Show a 3D progress bar (simple version)
 progress_bar() {
-    echo -e "\e[34mExiting in 30 seconds...\e[0m"
+    echo -e "\e[34mPlease Wait Installation in progress...\e[0m" | lolcat
     for ((i=0; i<=30; i++)); do
         printf "["
         for ((j=0; j<=i; j++)); do
@@ -53,7 +55,12 @@ progress_bar() {
         printf "]\r"
         sleep 1
     done
-    echo -e "\nExiting now."
+    echo -e "\nInstallati0n Complete."
+    xdg-open https://youtu.be/JMCTjlqS5Oc
+    echo "Support on Youtube" | lolcat
+    xdg-open https://www.youtube.com/@TermuxVibes
+    sleep 60
+    
 }
 
 # Run the functions
