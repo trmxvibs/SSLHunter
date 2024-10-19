@@ -1,15 +1,10 @@
 #!/bin/bash
 
 # Show banner permanently
-display_banner() {
-    echo -e "\e[35m
-   ______    __       _______. __    _______  __       _______
-  /      |  |  |     /       ||  |  /  _____||  |     |   ____|
- |  ,----'  |  |    |   (----'|  | |  |  __  |  |     |  |__
- |  |       |  |     \   \    |  | |  | |_ | |  |     |   __|
- |  `----.  |  `----.----)   |  | |  |__| | |  `----.|  |____
-  \______|  |_______|_______/   |__|\______| |_______||_______|
-\e[0m"
+display_banner(){
+    colors=(31 32 33 34 35 36)
+    color_index=$(( RANDOM % 6 ))
+    echo "SsL   Hunter" | figlet | lolcat
 }
 
 # Ask user for domain
@@ -70,7 +65,8 @@ auto_scan() {
 
 # Exit with a 3D progress bar and redirect to YouTube
 exit_with_progress() {
-    echo -e "\e[34mExiting in 60 seconds...\e[0m"
+    echo -e "\e[34mReports Is saving to local Directory
+                    Please Wait \e[0m" | lolcat
     for ((i=0; i<=60; i++)); do
         printf "["
         for ((j=0; j<=i; j++)); do
@@ -82,7 +78,8 @@ exit_with_progress() {
         printf "]\r"
         sleep 1
     done
-    echo -e "\nRedirecting to YouTube..."
+    echo -e "\nWelcome to YouTube..." | lolcat
+    sleep 03
     xdg-open "https://www.youtube.com/@TermuxVibes" || am start "https://www.youtube.com/@TermuxVibes"
 }
 
